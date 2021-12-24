@@ -13,12 +13,14 @@ const CastPage: NextPage = () => {
     return (
         <div>
             <h1>{title}</h1>
-            {data.map((InfoData: Info) => {
+            {data.map((infoData: Info) => {
+                const { synopsis, yearsAired } = infoData;
+
                 return (
-                    <div key={`fututama-${title}-${InfoData.id}`}>
-                        <div>synopsis: {InfoData.synopsis}</div>
+                    <div key={`fututama-${title}-${infoData.id}`}>
+                        <div>synopsis: {synopsis}</div>
                         <br></br>
-                        <div>yearsAired: {InfoData.yearsAired}</div>
+                        <div>yearsAired: {yearsAired}</div>
                     </div>
                 );
             })}

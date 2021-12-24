@@ -13,11 +13,11 @@ const CastPage: NextPage = () => {
     return (
         <div>
             <h1>{title}</h1>
-            {data.map((CharactersData: Character) => {
-                const { age, gender, homePlanet, sayings, name, images } = CharactersData;
+            {data.map((charactersData: Character) => {
+                const { age, gender, homePlanet, sayings, name, images } = charactersData;
 
                 return (
-                    <div key={`fututama-${title}-${CharactersData.id}`}>
+                    <div key={`fututama-${title}-${charactersData.id}`}>
                         <div>
                             name: {name.first}
                             {name.middle}

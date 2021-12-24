@@ -14,15 +14,17 @@ const CastPage: NextPage = () => {
         <div>
             <h1>${title}</h1>
                 {data.map((castData: Cast) => {
+                    const { name, born, bio } = castData;
+                    
                     return (
                         <div key={`fututama-${title}-${castData.id}`}>
-                            <h3>name {castData.name}</h3>
+                            <h3>name {name}</h3>
                             <br></br>
-                            <p>born {castData.born}</p>
+                            <p>born {born}</p>
                             <br></br>
-                            <p>url {castData.bio.url}</p>
+                            <p>url {bio.url}</p>
                             <br></br>
-                            <p>text {castData.bio.text}</p>
+                            <p>text {bio.text}</p>
                         </div>
                     );})}
         </div>
