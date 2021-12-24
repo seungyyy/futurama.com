@@ -1,10 +1,10 @@
-export interface CharacterData {
+export interface Character {
   name: {
     first: string,
     middle: string,
     last: string
   },
-  image: {
+  images: {
     headShot: string,
     main: string
   },

@@ -5,17 +5,17 @@ import { Cast } from '../../types/cast';
 
 
 const CastPage: NextPage = () => {
-    const name = 'cast';
-    const { data, error } = useFuturamaData(name);
+    const title = 'cast';
+    const { data, error } = useFuturamaData(title);
     if (error) return <Error />;
     if (!data) return <Loading />;
 
     return(
         <div>
-            <h1>${name}</h1>
+            <h1>${title}</h1>
                 {data.map((castData: Cast) => {
                     return (
-                        <div key={`fututama-${name}-${castData.id}`}>
+                        <div key={`fututama-${title}-${castData.id}`}>
                             <h3>name {castData.name}</h3>
                             <br></br>
                             <p>born {castData.born}</p>
