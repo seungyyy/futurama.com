@@ -11,7 +11,7 @@ const FuturamaIndexPage: NextPage = () => {
 
   return (
     <div>
-      {data.map}
+     
     </div>
 
   )
