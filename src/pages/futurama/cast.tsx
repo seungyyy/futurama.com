@@ -12,7 +12,7 @@ const CastPage: NextPage = () => {
 
     return(
         <div>
-            <h1>${title}</h1>
+            <h1>{title}</h1>
                 {data.map((castData: Cast) => {
                     const { name, born, bio } = castData;
                     
