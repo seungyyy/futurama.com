@@ -1,4 +1,4 @@
-export interface InfoData {
+export interface Info {
     synopsis: string;
     yearsAired: number;
     creators: [
