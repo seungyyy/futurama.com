@@ -4,7 +4,7 @@ import { useFuturamaData } from '../../hooks/useFuturamaData';
 import { Character } from '../../types/characters';
 
 
-const CastPage: NextPage = () => {
+const CharactersPage: NextPage = () => {
     const title = 'characters';
     const { data, error } = useFuturamaData(title);
     if (error) return <Error />;
@@ -36,9 +36,9 @@ const CastPage: NextPage = () => {
             })}
         </div>
     );
-}
+};
 
 
 
 
-export default CastPage;
+export default CharactersPage;

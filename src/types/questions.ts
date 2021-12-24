@@ -3,5 +3,4 @@ export interface Questions {
   question: string,
   possibleAnswers: [string],
   correctAnswer: string
-  
 }
