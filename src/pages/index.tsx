@@ -11,9 +11,9 @@ const FuturamaIndexPage: NextPage = () => {
       <Container>
           <Sections>
               <Nav>
-                <a href="/">
-                  <Image src={logoImg} alt="logo" />
-                </a>
+                  <a href="/">
+                      <Image src={logoImg} alt="logo" />
+                  </a>
                   <Ul>
                       <li>
                           <Link href="/futurama/info">Info</Link>
@@ -38,7 +38,7 @@ const FuturamaIndexPage: NextPage = () => {
               <Wrapper>
                   <Image src={titleImg} alt="futurama image" />
                   <Logoimg>
-                    <Image src={title} alt="futurama image" />
+                      <Image src={title} alt="futurama image" />
                   </Logoimg>
               </Wrapper>
               <Storytxt>
