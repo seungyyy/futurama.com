@@ -1,13 +1,12 @@
-import type { NextPage } from 'next'
+import type { NextPage } from 'next';
+
+
 
 const FuturamaIndexPage: NextPage = () => {
 
   return (
-    <div>
-      hello
-    </div>
-
-  )
+      <div>Hi, I'm an app!</div>
+  );
 }
 
 export default FuturamaIndexPage
