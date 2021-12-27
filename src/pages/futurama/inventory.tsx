@@ -15,7 +15,6 @@ const InventoryPage: NextPage = () => {
             <h1>{title}</h1>
             {data.map((inventoryData: Inventory) => {
                 const { title, category, description, slogan, price } = inventoryData;
-
                 return (
                     <div key={`fututama-${title}-${inventoryData.id}`}>
                         <h3>title {title}</h3>
