@@ -11,9 +11,9 @@ const FuturamaIndexPage: NextPage = () => {
       <Container>
           <Sections>
               <Nav>
-                  <a href="/">
+                  <Alink href="/">
                       <Image src={logoImg} alt="logo" />
-                  </a>
+                  </Alink>
                   <Ul>
                       <li>
                           <Link href="/futurama/info">Info</Link>
@@ -69,6 +69,10 @@ const Nav = styled.nav`
     width: 100%;
     justify-content: space-between;
     align-items: center;
+`;
+
+const Alink = styled.a`
+   
 `;
 
 const Ul = styled.ul`
