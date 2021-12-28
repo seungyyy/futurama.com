@@ -43,7 +43,7 @@ const CastPage: NextPage = () => {
                           <Link href="/questions">Qiuz</Link>
                       </li>
                       <li>
-                          <Link href="/Inventory">Inventory</Link>
+                          <Link href="/inventory">Inventory</Link>
                       </li>
                   </Ul>
               </Nav>

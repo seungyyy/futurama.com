@@ -50,7 +50,7 @@ const InfoPage: NextPage = () => {
                           <Link href="/questions">Qiuz</Link>
                       </li>
                       <li>
-                          <Link href="/Inventory">Inventory</Link>
+                          <Link href="/inventory">Inventory</Link>
                       </li>
                   </Ul>
               </Nav>
@@ -63,10 +63,7 @@ const InfoPage: NextPage = () => {
                       const { synopsis, yearsAired } = infoData;
                       return (
                           <InfoCard key={`fututama-${title}-${infoData.id}`}>
-                              <img
-                                  src="https://www.thecoolector.com/wp-content/uploads/2014/01/Screen-shot-2014-01-07-at-07.41.42-1050x574.png"
-                                  alt="futurama poster"
-                              />
+                              <img src="https://www.thecoolector.com/wp-content/uploads/2014/01/Screen-shot-2014-01-07-at-07.41.42-1050x574.png" alt="futurama poster" />
                               <Synopsis>
                                   <span>yearsAired: Futurama {yearsAired}</span>
                                   <p>{synopsis}</p>
