@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import { Error, Loading } from '../components';
 import { useFuturamaData } from '../hooks/useFuturamaData';
 import { Character } from '../types/characters';
+import Image from 'next/image';
 
 const CharactersPage: NextPage = () => {
     const title = 'characters';
@@ -23,7 +24,7 @@ const CharactersPage: NextPage = () => {
                             {name.last}
                         </div>
                         <br></br>
-                        <img src={images.main} alt=''/>
+                        <Image src={images.main} alt="" />
                         <br></br>
                         <div>gender: {gender}</div>
                         <br></br>
