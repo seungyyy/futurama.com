@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
-import { Error, Loading } from '../../components';
-import { useFuturamaData } from '../../hooks/useFuturamaData';
-import { Inventory } from '../../types/inventory';
+import { Error, Loading } from '../components';
+import { useFuturamaData } from '../hooks/useFuturamaData';
+import { Inventory } from '../types/inventory';
 
 
 const InventoryPage: NextPage = () => {

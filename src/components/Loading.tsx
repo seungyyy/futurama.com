@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import lodingImg from '../pages/image/loading.png';
+import lodingImg from '/public/image/loading.png';
 
 export const Loading = () => {
     return (

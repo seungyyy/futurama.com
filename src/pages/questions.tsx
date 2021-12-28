@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
-import { Error, Loading } from '../../components';
-import { useFuturamaData } from '../../hooks/useFuturamaData';
-import { Questions } from '../../types/questions';
+import { Error, Loading } from '../components';
+import { useFuturamaData } from '../hooks/useFuturamaData';
+import { Questions } from '../types/questions';
 
 
 const QuestionsPage: NextPage = () => {
