@@ -112,13 +112,13 @@ const Storytxt = styled.div`
 `;
 
 const Footer = styled.footer`
-  width: 80%;
+  width: 95%;
+  position: fixed;
+  bottom: 4rem;
+  left: 1rem;
   font-size: 10px;
-  padding: 4rem 0;
-  margin: 0 auto;
   color: #fcfff6;
   text-align: center;
 `;
-
 
 export default FuturamaIndexPage;

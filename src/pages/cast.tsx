@@ -17,59 +17,60 @@ const CastPage: NextPage = () => {
   if (!data) return <Loading />;
 
   return (
-    <Container>
-      <Section1>
-      <Logoimg>
-        <Image src={titleImg} alt="futurama image" />
-      </Logoimg>
-      <Nav>
-        <Alink href="/">
-            <Image src={logoImg} alt="logo" />
-        </Alink>
-        <Ul>
-          <li>
-            <Link href="/info">Info</Link>
-          </li>
-          <li>
-            <Link href="/characters">Characters</Link>
-          </li>
-          <li>
-            <Link href="/episodes">Episodes</Link>
-          </li>
-          <li>
-            <Link href="/cast">Cast</Link>
-          </li>
-          <li>
-            <Link href="/questions">Qiuz</Link>
-          </li>
-          <li>
-            <Link href="/Inventory">Inventory</Link>
-          </li>
-        </Ul>
-      </Nav>
-      <Category>Cast</Category>
-      <Section2>
-        {data.map((castData: Cast) => {
-            const { name, born, bio } = castData;
-            return (
-                <CastCard key={`${title}-${castData.id}`}>
-                    <h3 className="castName">{name}</h3>
-                    <p className="bornTxt">
-                        {born?.split('/').find((item) => item.length === 4)}.
-                        {born
-                            ?.split('/')
-                            .filter((item) => item.length !== 4)
-                            .join('.')}
-                    </p>
-                    <a href={bio.url} className="bioLink">
-                        더보기
-                    </a>
-                </CastCard>
-            );
-          })}
-      </Section2>
-      </Section1>
-    </Container>
+      <Container>
+          <Section1>
+              <Logoimg>
+                  <Image src={titleImg} alt="futurama image" />
+              </Logoimg>
+              <Nav>
+                  <Alink href="/">
+                      <Image src={logoImg} alt="logo" />
+                  </Alink>
+                  <Ul>
+                      <li>
+                          <Link href="/info">Info</Link>
+                      </li>
+                      <li>
+                          <Link href="/characters">Characters</Link>
+                      </li>
+                      <li>
+                          <Link href="/episodes">Episodes</Link>
+                      </li>
+                      <li>
+                          <Link href="/cast">Cast</Link>
+                      </li>
+                      <li>
+                          <Link href="/questions">Qiuz</Link>
+                      </li>
+                      <li>
+                          <Link href="/Inventory">Inventory</Link>
+                      </li>
+                  </Ul>
+              </Nav>
+              <Category>Cast</Category>
+              <Section2>
+                  {data.map((castData: Cast) => {
+                      const { name, born, bio } = castData;
+                      return (
+                          <CastCard key={`${title}-${castData.id}`}>
+                              <h3 className="castName">{name}</h3>
+                              <p className="bornTxt">
+                                  {born?.split('/').find((item) => item.length === 4)}.
+                                  {born
+                                      ?.split('/')
+                                      .filter((item) => item.length !== 4)
+                                      .join('.')}
+                              </p>
+                              <a href={bio.url} className="bioLink">
+                                  더보기
+                              </a>
+                          </CastCard>
+                      );
+                  })}
+              </Section2>
+          </Section1>
+          <Footer>© Copyright LeeSeungyeon</Footer>
+      </Container>
   );
 };
 
@@ -77,6 +78,7 @@ const Container = styled.main`
     width: 1920px;
     height: 100%;
     background-color: #0e0e0e;
+    font-family: 'Oswald', sans-serif;
 `;
 
 const Section1 = styled.section`
@@ -141,35 +143,44 @@ const Section2 = styled.section`
 `;
 
 const CastCard = styled.div`
-  position: relative;
-  background-color: #fcfff6;
-  border-radius: 6px;
-  padding-bottom: 3rem;
-  box-shadow: rgba(49, 160, 49, 0.575) 5px 5px, rgba(49, 160, 49, 0.3) 10px 10px,
-         rgba(49, 160, 49, 0.1) 20px 20px,
-        rgba(49, 160, 49, 0.05) 25px 25px;
-  .castName {
-    display: inline-block;
-    margin-right: .4rem;
-  }
-  .bornTxt {
-    display: inline-block;
-    font-size: .7rem;
-  }
-  .bioLink {
-    position: absolute;
-    width: 15%;
-    bottom: 1rem;
-    left: 13rem;
-    padding: 0.2rem 0.2rem;
-    background-color: #F89700;
+    position: relative;
+    background-color: #fcfff6;
     border-radius: 6px;
-  }
-  &:hover {
-    background-color: #b5b8b0;
-  }
+    padding-bottom: 3rem;
+    box-shadow: rgba(49, 160, 49, 0.575) 5px 5px, rgba(49, 160, 49, 0.3) 10px 10px,
+        rgba(49, 160, 49, 0.1) 20px 20px, rgba(49, 160, 49, 0.05) 25px 25px;
+    .castName {
+        display: inline-block;
+        margin-right: 0.4rem;
+    }
+    .bornTxt {
+        display: inline-block;
+        font-size: 0.7rem;
+    }
+    .bioLink {
+        position: absolute;
+        width: 15%;
+        bottom: 1rem;
+        left: 13rem;
+        padding: 0.2rem 0.2rem;
+        background-color: #f89700;
+        border-radius: 6px;
+        font-family: 'Gothic A1', sans-serif;
+        font-weight: 400;
+        color: #fcfff6;
+    }
+    &:hover {
+        background-color: #b5b8b0;
+    }
 `;
 
-
-
+const Footer = styled.footer`
+  width: 95%;
+  position: fixed;
+  bottom: 4rem;
+  left: 1rem;
+  font-size: 10px;
+  color: #fcfff6;
+  text-align: center;
+`;
 export default CastPage;
