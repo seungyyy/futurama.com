@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
-import { Error, Loading, } from '..';
-import { CastCard } from './castCard';
+import { Error, Loading } from '..';
+import { CharacterCard } from './charactersCard';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
 import { useFuturamaData } from '../../hooks/useFuturamaData';
-import { Cast } from '../../types/cast';
+import { Character } from '../../types/characters';
 
-interface CastContainerProps {
+interface CharacterContainerProps {
   text: string;
 }
 
-export const CastContainer = ({ text }: CastContainerProps) => {
+export const CharactersContainer = ({ text }: CharacterContainerProps) => {
   const { data, error } = useFuturamaData(text);
 
   if (error) return <Error />;
@@ -17,18 +17,18 @@ export const CastContainer = ({ text }: CastContainerProps) => {
 
   return (
     <Section1>
-      <Category>Cast</Category>
+      <Category>Characters</Category>
       <Article>
-        {data.map((castData: Cast) => {
+        {data.map((charactersData: Character) => {
           return (
-          <CastCard key={`${text}-list-${castData.id}`} castData={castData} 
+          <CharacterCard key={`${text}-list-${charactersData.id}`} charactersData={charactersData} 
           />
           );
         })}
       </Article>
     </Section1>
   );
-};
+}
 
 const Category = styled.p`
     color: #236e2d;
@@ -53,6 +53,3 @@ const Article = styled.section`
         grid-template-columns: repeat(3, 1fr);
     }
 `;
-
-
-

@@ -43,9 +43,9 @@ const Container = styled.div`
     }
     .bioLink {
         display: block;
-        width: 15%;
+        width: 18%;
         margin: 0 auto;
-        padding: 0.2rem 0.2rem;
+        padding: 0.2rem 0.1rem;
         background-color: #f89700;
         border-radius: 6px;
         font-family: 'Gothic A1', sans-serif;
