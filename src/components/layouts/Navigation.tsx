@@ -1,15 +1,10 @@
 import styled from '@emotion/styled';
 import { ROUTES } from '../../constants';
+import { Route } from '../../types/Route';
 import Image from 'next/image';
-import logoImg from '../../public/image/logo.png';
-import titleImg from '../../public/image/title.png';
+import logoImg from '../../../public/image/logo.png';
+import titleImg from '../../../public/image/title.png';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
-
-interface ROUTE {
-  ID: number;
-  PATH: string;
-  LABEL: string;
-}
 
 export const Navigation = () => {
   return(
@@ -22,7 +17,7 @@ export const Navigation = () => {
           <Image src={logoImg} alt="logo" />
         </Alink>
         <Ul>
-          {ROUTES.map((routeObject: ROUTE) => {
+          {ROUTES.map((routeObject: Route) => {
             return (
               <li key={`menu-${routeObject.ID}`}>
                 <Link href={routeObject.PATH}>
@@ -38,17 +33,19 @@ export const Navigation = () => {
 }
 
 const Logoimg = styled.div`
-    position: absolute;
-    transform: translate(720px, 18px);
+  position: absolute;
+  transform: translate(720px, -2px);
 `;
 
 const Nav = styled.nav`
   max-width: 1920px;
   width: 80%;
   display: flex;
+  margin: 0 auto;
+  padding-top: 2rem;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 `;
 
 const Alink = styled.a``;
