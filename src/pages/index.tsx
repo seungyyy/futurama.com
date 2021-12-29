@@ -28,11 +28,11 @@ const Wrapper = styled.div`
   img {
     object-fit: contain;
   }
-  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+  @media (min-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
     max-width: 80%;
     margin: 9rem auto 0;
   }
-  @media (min-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
     max-width: 80%;
     margin: 9rem auto 0;
   }
