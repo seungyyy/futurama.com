@@ -1,2 +1,2 @@
-// export * from './questionsCard';
-// export * from './questionsContainer';
+export * from './questionsCard';
+export * from './questionsContainer';

@@ -5,3 +5,4 @@ export * from './characters';
 export * from './episodes';
 export * from './info';
 export * from './inventory';
+export * from './questions';
