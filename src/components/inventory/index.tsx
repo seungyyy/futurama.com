@@ -1,2 +1,2 @@
-// export * from './inventoryCard';
-// export * from './inventoryContainer';
+export * from './inventoryCard';
+export * from './inventoryContainer';

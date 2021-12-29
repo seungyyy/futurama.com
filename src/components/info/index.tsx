@@ -1,2 +1,2 @@
-//export * from './infoCard';
-// export * from './infoContainer';
+export * from './infoCard';
+export * from './infoContainer';

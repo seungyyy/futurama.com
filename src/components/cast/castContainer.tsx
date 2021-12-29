@@ -15,6 +15,7 @@ export const CastContainer = ({ text }: CastContainerProps) => {
   if (error) return <Error />;
   if (!data) return <Loading />;
 
+
   return (
     <Section1>
       <Category>Cast</Category>
