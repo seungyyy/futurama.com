@@ -10,31 +10,31 @@ export const ROUTES = [
   {
     ID: 0,
     PATH: '/info',
-    LABEL: '정보',
+    LABEL: 'Info',
   },
   {
     ID: 1,
     PATH: '/characters',
-    LABEL: '캐릭터',
+    LABEL: 'Characters',
   },
   {
     ID: 2,
     PATH: '/cast',
-    LABEL: '배역',
+    LABEL: 'Cast',
   },
   {
     ID: 3,
     PATH: '/episodes',
-    LABEL: '에피소드',
+    LABEL: 'Episodes',
   },
   {
     ID: 4,
     PATH: '/questions',
-    LABEL: '퀴즈',
+    LABEL: 'Quiz',
   },
   {
     ID: 5,
     PATH: '/inventory',
-    LABEL: '인벤토리',
+    LABEL: 'Inventory',
   }
 ]
