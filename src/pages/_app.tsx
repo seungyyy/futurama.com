@@ -6,9 +6,12 @@ import { Layout }from '../components/layouts';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
+    <>
     <Layout>
         <Component {...pageProps} />
     </Layout>
+    <div id="modal-root"></div>
+    </>
   );
 }
 

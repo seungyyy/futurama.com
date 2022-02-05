@@ -7,34 +7,32 @@ export const Footer = () => {
       <div className="footerTxt">
         <a href="https://sampleapis.com/api-list/futurama">https://sampleapis.com/api-list/futurama</a>
         <p className="linkTxt">Sample APIs - Futurama</p>
+        <Copyright>© Copyright LeeSeungyeon</Copyright> 
       </div>
-      <Copyright>© Copyright LeeSeungyeon</Copyright> 
     </Bottom>
   );
 }
 
 const Bottom = styled.footer`
-  width: 95%;
-  position: fixed;
-  bottom: 2rem;
-  left: 1rem;
+  margin-top: 3em;
   color: #fcfff6;
   text-align: center;
   font-family: 'Gothic A1', sans-serif;
-  letter-spacing: -1px;
+  background-color: #0e0e0e;
   .footerTxt {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 12px;
     .linkTxt {
-    margin-right: 5px;
-    @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
-      margin: 2px 0;
-    }
+      margin: 0 0.7em;
+      @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+        margin: 2px 0;
+      }
     }
     @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
       flex-direction: column;
+      margin-top: 15em;
     }
   }
 `;

@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { ROUTES } from '../../constants';
 import { Route } from '../../types/Route';
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import logoImg from '../../../public/image/logo.png';
 import titleImg from '../../../public/image/title.png';
@@ -17,18 +18,17 @@ export const Navigation = () => {
   return(
     <header>
       <Nav>
-        <Alink href="/">
-          <Image src={logoImg} alt="logo" />
-        </Alink>
-        <Logoimg>
-          <Image src={titleImg} alt="futurama image" />
-        </Logoimg>
+        <Link href="/">
+          <div className="logo-img">
+            <Image src={logoImg} alt="logo" />
+          </div>
+        </Link>
         <ul className={isOn ? "hideMenu" : "showMenu"}>
           {ROUTES.map((routeObject: Route) => {
             return (
               <li key={`menu-${routeObject.ID}`}>
-                <Link href={routeObject.PATH}>
-                  <a>{routeObject.LABEL}</a>
+                <Link href={routeObject.PATH} passHref>
+                  <a className="nav-link">{routeObject.LABEL}</a>
                 </Link>
               </li>
             );
@@ -40,10 +40,6 @@ export const Navigation = () => {
   )
 }
 
-const Logoimg = styled.div`
-  flex: 1;
-`;
-
 const Nav = styled.nav`
   max-width: 1920px;
   position: relative;
@@ -54,16 +50,25 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  .logo-img {
+    object-fit: cover;
+    cursor: pointer;
+  }
+  flex: 2.5;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    object-fit: contain;
+    transform: translateX(-50px) scale(0.8);
+  }
   .menuBtn {
     display: none;
     width: 35px;
-    margin-right: -3rem;
     cursor: pointer;
     @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
-      margin-right: -1.5rem;
+      margin-right: -1rem;
     }
     @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
       display: block;
+      margin-right: 0;
     }
   }
   ul {
@@ -73,6 +78,21 @@ const Nav = styled.nav`
     @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
       display: none;
     }
+    .nav-link {
+      color: #fcfff6;
+      font-size: 20px;
+      letter-spacing: 1px;
+      padding-bottom: 4px;
+      &:hover {
+        border-bottom: 3px solid #236e2d;
+      }
+      @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+        padding-bottom: 0;
+        &:hover {
+          border: none;
+        }
+      }
+    }
   }
   @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
     .hideMenu {
@@ -80,41 +100,25 @@ const Nav = styled.nav`
     }
     .showMenu {
       display: block;
-      width: 150px;
+      position: fixed;
+      width: 100px;
+      top: 5rem;
       height: 100vh;
-      position: absolute;
-      flex-direction: column;
-      justify-content: flex-start;
-      top: 6rem;
-      right: -3rem;
-      text-align: right;
-      z-index: 10;
+      right: 0;
       background-color: #0e0e0e;
-      opacity: .8;
-      li:nth-of-type(n+1) {
+      z-index: 20;
+      opacity: 0.8;
+      li:nth-of-type(n + 1) {
         margin-top: 0.5rem;
       }
-      @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
-        padding-right: 1.5rem;
+      li {
+        padding-left: 1.5rem;
+      }
+      li > a {
+        &:hover {
+          color: #236e2d;
+        }
       }
     }
-  }
-`;
-
-const Alink = styled.a`
-  flex: 2.5;
-  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
-    flex: 0.9;
-    
-  }
-`;
-
-const Link = styled.a`
-  color: #fcfff6;
-  font-size: 20px;
-  letter-spacing: 1px;
-  padding-bottom: 4px;
-  &:hover {
-    border-bottom: 3px solid #236e2d;
   }
 `;

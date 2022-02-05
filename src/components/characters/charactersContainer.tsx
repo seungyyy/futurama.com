@@ -43,13 +43,15 @@ const Section1 = styled.section`
 `;
 
 const Article = styled.section`
-    display: grid;
-    gap: 3em;
-    text-align: center;
-    @media (min-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    @media (min-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  display: grid;
+  gap: 3em;
+  text-align: center;
+  grid-template-columns: repeat(4, 1fr);
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
