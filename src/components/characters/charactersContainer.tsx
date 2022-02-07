@@ -37,9 +37,9 @@ const Category = styled.p`
 `;
 
 const Section1 = styled.section`
-    width: 80%;
-    margin: 0 auto;
-    padding: 25px 0;
+  width: 80%;
+  margin: 0 auto;
+  padding: 25px 0;
 `;
 
 const Article = styled.section`

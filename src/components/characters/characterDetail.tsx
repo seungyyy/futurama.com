@@ -21,15 +21,89 @@ export const CharacterDetail = () => {
   console.log(gender);
   console.log(name);
   return (
-    <>
-      <div style={{ color: "red" }}>{age}</div>
-      <div style={{color: "red"}}>sadjlksajlsadkajljdklsajlsadsa</div>
-      <div style={{color: "red"}}>sadjlksajlsadkajljdklsajlsadsa</div>
-      <div style={{color: "red"}}>sadjlksajlsadkajljdklsajlsadsa</div>
-      <div style={{color: "red"}}>sadjlksajlsadkajljdklsajlsadsa</div>
-      <div style={{color: "red"}}>sadjlksajlsadkajljdklsajlsadsa</div>
-    </>
+    <Container>
+      <Detail>
+        <ImgBox>
+          <img src={images.main} alt="캐릭터이미지" />
+        </ImgBox>
+        <NameTxt>
+          {name.first}
+          {name.middle}
+          {name.last}
+          <div className="genderBox">
+            {gender == 'Male' ? <Male>Male</Male> : <Female>Female</Female>}
+          </div>
+          <span className="info-age">age: {age}</span>
+          <span className="info-planet">homePlanet: {homePlanet}</span>
+          <DetailInfo>
+            {sayings.slice(0, 9).map((el: any, index: any) => {
+              return <div key={index}>{el.split()}</div>;
+            })}
+          </DetailInfo>
+        </NameTxt>
+      </Detail>
+    </Container>
   );
 };
 
+const Container = styled.article`
+  width: 80%;
+  margin: 0 auto;
+  padding: 25px 0;
+`;
 
+const Detail = styled.div`
+  display: flex;
+  background-color: #fcfff6;
+  border-radius: 6px;
+  padding: 2rem 0;
+  box-shadow: rgba(49, 160, 49, 0.575) 5px 5px, rgba(49, 160, 49, 0.3) 10px 10px,
+    rgba(49, 160, 49, 0.2) 15px 15px, rgba(49, 160, 49, 0.1) 20px 20px;
+  &:hover {
+    background-color: #b5b8b0;
+  }
+`;
+
+const ImgBox = styled.div`
+  width: 40%;
+  img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+  }
+`;
+
+const NameTxt = styled.div`
+  margin-top: 2em;
+  font-size: 2em;
+  letter-spacing: 0.5px;
+  .genderBox {
+    border-radius: 10px;
+    display: inline-block;
+  }
+  .info-age {
+    margin: 0 15px;
+    font-size: 0.7em;
+  }
+  .info-planet {
+    font-size: 0.7em;
+  }
+`;
+
+const Male = styled.span`
+  margin-left: 0.7em;
+  color: #00e6c7;
+  font-size: 0.6em;
+`;
+
+const Female = styled.span`
+  margin-left: 0.7em;
+  color: pink;
+  font-size: 0.6em;
+  `;
+
+const DetailInfo = styled.div`
+  margin-top: 1em;
+  font-size: 0.9em;
+  line-height: 1.6;
+`;
