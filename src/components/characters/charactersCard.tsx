@@ -1,13 +1,12 @@
 import { Character } from '../../types/characters';
 import styled from '@emotion/styled/';
-import { useRouter } from 'next/router'
 import Link from 'next/link';
 interface CharacterProps {
     charactersData: Character;
 }
 
 export const CharacterCard = ({ charactersData }: CharacterProps) => {
-  const { age, gender, homePlanet, sayings, name, images, id } = charactersData;
+  const {gender, name, images, id } = charactersData;
 
   return (
     <Container>
@@ -40,7 +39,6 @@ const Container = styled.div`
   }
   .more-btn {
     padding: 0.5em 1em;
-    margin-top: .7em;
     font-family: 'Gothic A1', sans-serif;
     border-radius: 8px;
     font-size: .8rem;
@@ -60,7 +58,7 @@ const ImgBox = styled.div`
 `;
 
 const NameTxt = styled.div`
-    margin-top: 6em;
+    margin: 6em 0 .7em;
     font-size: 1.2em;
     letter-spacing: 0.5px;
     .genderBox {
