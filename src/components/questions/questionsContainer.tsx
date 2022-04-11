@@ -4,6 +4,7 @@ import { QuestionCard } from './questionsCard';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
 import { useFuturamaData } from '../../hooks/useFuturamaData';
 import { Questions } from '../../types/questions';
+import { useState } from 'react';
 
 interface QuestionContainerProps { 
   text: string;
@@ -11,6 +12,11 @@ interface QuestionContainerProps {
 
 export const QuestionContainer = ({ text }: QuestionContainerProps) => { 
   const { data, error } = useFuturamaData(text);
+  const [ question, setQuestion ] = useState({
+    start: 0,
+    end: 1,
+  })
+
 
   if (error) return <Error />;
   if (!data) return <Loading />;
@@ -19,7 +25,7 @@ export const QuestionContainer = ({ text }: QuestionContainerProps) => {
     <Section1>
       <Category>Quiz</Category>
       <Article>
-        {data.map((questionData: Questions) => {
+        {data.slice(question.start, question.end).map((questionData: Questions) => {
           return (
           <QuestionCard key={`${text}-list-${questionData.id}`} questionData={questionData} 
           />

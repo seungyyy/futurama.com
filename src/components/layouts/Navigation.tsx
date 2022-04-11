@@ -9,13 +9,13 @@ import titleImg from '../../../public/image/title.png';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
 
 export const Navigation = () => {
-  const [isOn, setMenu] = useState(true);
+  const [isOn, setIsOn] = useState(true);
 
   const toggleBtn = () => {
-      setMenu((isOn) => !isOn); // on,off 개념 boolean
+      setIsOn(!isOn); // on,off 개념 boolean
   };
 
-  return(
+  return (
     <header>
       <Nav>
         <Link href="/">
@@ -23,7 +23,7 @@ export const Navigation = () => {
             <Image src={logoImg} alt="logo" />
           </div>
         </Link>
-        <ul className={isOn ? "hideMenu" : "showMenu"}>
+        <ul className={isOn ? 'hideMenu' : 'showMenu'} onClick={toggleBtn}>
           {ROUTES.map((routeObject: Route) => {
             return (
               <li key={`menu-${routeObject.ID}`}>
@@ -34,10 +34,12 @@ export const Navigation = () => {
             );
           })}
         </ul>
-        <button type="button" className="menuBtn" onClick={() => toggleBtn()}><img src={`/image/menuIcon.png`} alt="menu button" /></button>  
+        <button type="button" className="menuBtn" onClick={toggleBtn}>
+          <img src={`/image/menuIcon.png`} alt="menu button" />
+        </button>
       </Nav>
     </header>
-  )
+  );
 }
 
 const Nav = styled.nav`
@@ -54,10 +56,8 @@ const Nav = styled.nav`
     object-fit: cover;
     cursor: pointer;
   }
-  flex: 2.5;
   @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
     object-fit: contain;
-    transform: translateX(-50px) scale(0.8);
   }
   .menuBtn {
     display: none;
@@ -101,10 +101,11 @@ const Nav = styled.nav`
     .showMenu {
       display: block;
       position: fixed;
-      width: 100px;
+      width: 150px;
       top: 5rem;
       height: 100vh;
-      right: 0;
+      right: 10px;
+      padding: 0;
       background-color: #0e0e0e;
       z-index: 20;
       opacity: 0.8;

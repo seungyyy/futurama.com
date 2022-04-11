@@ -10,7 +10,7 @@ export const QuestionCard = ({ questionData }: QestionProps) => {
 
   return (
     <Container>
-      <p>Q{question}</p>
+      <p>Q. {question}</p>
       <p>{correctAnswer}</p>
     </Container>
   );
