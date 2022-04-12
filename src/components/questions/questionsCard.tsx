@@ -6,25 +6,24 @@ interface QestionProps {
 }
 
 export const QuestionCard = ({ questionData }: QestionProps) => { 
-  const { question, correctAnswer } = questionData;
+  const { question, possibleAnswers, correctAnswer } = questionData;
 
   return (
     <Container>
       <p>Q. {question}</p>
-      <p>{correctAnswer}</p>
+      {possibleAnswers.map((el, index) => { 
+        return (
+          <>
+            <input type="checkbox" key={index} id={index.toString()} />
+            <label htmlFor={index.toString()}>{index+1}. {el} </label>
+          </>
+        )
+      })}
     </Container>
   );
 };
 
 
 const Container = styled.div`
-  position: relative;
-  background-color: #fcfff6;
-  border-radius: 6px;
-  padding: 1rem;
-  box-shadow: rgba(49, 160, 49, 0.575) 5px 5px, rgba(49, 160, 49, 0.3) 10px 10px,
-        rgba(49, 160, 49, 0.2) 15px 15px, rgba(49, 160, 49, 0.1) 20px 20px;
-  &:hover {
-    background-color: #b5b8b0;
-  }
+  padding: 2rem;
 `;
