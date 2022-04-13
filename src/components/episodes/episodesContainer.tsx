@@ -4,12 +4,10 @@ import { EpisodeCard } from './episodesCard';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
 import { useFuturamaData } from '../../hooks/useFuturamaData';
 import { Episodes } from '../../types/episodes';
-import { allowedNodeEnvironmentFlags } from 'process';
 import { useState } from 'react';
 
 interface EpisodeContainerProps {
   text: string;
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const EpisodeContainer = ({ text }: EpisodeContainerProps) => {
