@@ -37,7 +37,7 @@ export const CharacterDetail = () => {
           <span className="info-planet">homePlanet: {homePlanet}</span>
           <DetailInfo>
             {sayings.slice(0, 6).map((el: any, index: any) => {
-              return <div key={index}>"{el.split()}"</div>;
+              return <div key={index}>&ldquo;{el.split()}&rdquo;</div>;
             })}
           </DetailInfo>
         </NameTxt>
