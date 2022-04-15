@@ -39,7 +39,6 @@ const Container = styled.div`
   }
   .more-btn {
     padding: 0.5em 1em;
-    font-family: 'Gothic A1', sans-serif;
     border-radius: 8px;
     font-size: .8rem;
     color: #fcfff6;

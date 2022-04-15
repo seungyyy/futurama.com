@@ -13,3 +13,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+button {
+  font-family:'Oswald', sans-serif, 'Gothic A1', sans-serif;
+}
