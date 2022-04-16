@@ -10,15 +10,15 @@
     * **Inventory Page** : futurama 제품 페이지 
 
 <div>
-<img width="600" align="left" src="https://user-images.githubusercontent.com/54584337/163677123-fe10bf64-3481-4f3a-bad3-569e0d2e6c0d.png" alt="index page">
-<img width="200" align="right" src="https://user-images.githubusercontent.com/54584337/163677202-9a529e03-7b9e-4e21-82bc-1c27c868d914.png" alt="mobile page">
+ <img width="600" src="https://user-images.githubusercontent.com/54584337/163677123-fe10bf64-3481-4f3a-bad3-569e0d2e6c0d.png" alt="index page">
+ <img width="200" align="right" src="https://user-images.githubusercontent.com/54584337/163677202-9a529e03-7b9e-4e21-82bc-1c27c868d914.png" alt="mobile page">
 </div>
 
 <br>
 <br>
 <br>
   
-# 배포 링크
+## 배포 링크
 
 https://futurama-com.vercel.app/
 ## Usage(자세한 실행 방법)
