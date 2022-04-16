@@ -6,7 +6,7 @@ import { MEDIA_QUERY_END_POINT } from '../../constants';
 import Link from 'next/link';
 import Image from 'next/image';
 import backBtn from '../../../public/image/icon-arrow-left.png';
-
+import { theme } from '../../constants/theme';
 
 export const CharacterDetail = () => {
   const path = 'characters';
@@ -52,19 +52,17 @@ export const CharacterDetail = () => {
 };
 
 const Container = styled.article`
-  width: 80%;
-  margin: 0 auto;
-  padding: 25px 0;
+  ${theme.common.section}
 `;
 
 const Detail = styled.div`
   position: relative;
   display: flex;
-  background-color: #fcfff6;
+  background-color: ${theme.colors.white};
   border-radius: 6px;
   padding: 2rem 0;
-  box-shadow: rgba(49, 160, 49, 0.575) 5px 5px, rgba(49, 160, 49, 0.3) 10px 10px,
-    rgba(49, 160, 49, 0.2) 15px 15px, rgba(49, 160, 49, 0.1) 20px 20px;
+  box-shadow: ${theme.common.boxShadow};
+  box-sizing: border-box;
   .back-link {
     position: absolute;
     top: 20px;
@@ -94,6 +92,7 @@ const NameTxt = styled.div`
   font-size: 2em;
   letter-spacing: 0.5px;
   padding: 1em 1.5em;
+  box-sizing: border-box;
   .genderBox {
     border-radius: 10px;
     display: inline-block;
@@ -121,15 +120,15 @@ const NameTxt = styled.div`
 
 const Male = styled.span`
   margin-left: 0.7em;
-  color: #00e6c7;
+  color: ${theme.colors.mint};
   font-size: 0.6em;
 `;
 
 const Female = styled.span`
   margin-left: 0.7em;
-  color: pink;
+  color: ${theme.colors.pink};
   font-size: 0.6em;
-  `;
+`;
 
 const DetailInfo = styled.div`
   margin-top: 1em;

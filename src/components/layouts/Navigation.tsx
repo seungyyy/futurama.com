@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import logoImg from '../../../public/image/logo.png';
-import titleImg from '../../../public/image/title.png';
+import { theme } from '../../constants/theme';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
 
 export const Navigation = () => {
@@ -47,11 +47,11 @@ const Nav = styled.nav`
   position: relative;
   width: 80%;
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 1rem;
   padding-top: 2rem;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  box-sizing: border-box;
   .logo-img {
     object-fit: cover;
     cursor: pointer;
@@ -79,12 +79,13 @@ const Nav = styled.nav`
       display: none;
     }
     .nav-link {
-      color: #fcfff6;
+      color: ${theme.colors.white};
       font-size: 20px;
       letter-spacing: 1px;
       padding-bottom: 4px;
+      box-sizing: border-box;
       &:hover {
-        border-bottom: 3px solid #236e2d;
+        border-bottom: 3px solid ${theme.colors.green};
       }
       @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
         padding-bottom: 0;
@@ -106,7 +107,7 @@ const Nav = styled.nav`
       height: 100vh;
       right: 10px;
       padding: 0;
-      background-color: #0e0e0e;
+      background-color: ${theme.colors.black};
       z-index: 20;
       opacity: 0.8;
       li:nth-of-type(n + 1) {
@@ -114,10 +115,11 @@ const Nav = styled.nav`
       }
       li {
         padding-left: 1.5rem;
+        box-sizing: border-box;
       }
       li > a {
         &:hover {
-          color: #236e2d;
+          color: ${theme.colors.green};
         }
       }
     }

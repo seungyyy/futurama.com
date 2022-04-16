@@ -4,6 +4,7 @@ import { CastCard } from './castCard';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
 import { useFuturamaData } from '../../hooks/useFuturamaData';
 import { Cast } from '../../types/cast';
+import { theme } from '../../constants/theme';
 
 interface CastContainerProps {
   text: string;
@@ -32,21 +33,16 @@ export const CastContainer = ({ text }: CastContainerProps) => {
 };
 
 const Category = styled.p`
-    color: #236e2d;
-    font-size: 37px;
-    border-bottom: 1px solid #236e2d;
+  ${theme.common.category}
 `;
 
 const Section1 = styled.section`
-    width: 80%;
-    margin: 0 auto;
-    padding: 25px 0;
+  ${theme.common.section}
 `;
 
 const Article = styled.section`
     display: grid;
     gap: 3em;
-    text-align: center;
     @media (min-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
         grid-template-columns: repeat(1, 1fr);
     }

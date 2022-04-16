@@ -5,6 +5,7 @@ import { MEDIA_QUERY_END_POINT } from '../../constants';
 import { useFuturamaData } from '../../hooks/useFuturamaData';
 import { Episodes } from '../../types/episodes';
 import { useState } from 'react';
+import { theme } from '../../constants/theme';
 
 interface EpisodeContainerProps {
   text: string;
@@ -161,27 +162,23 @@ export const EpisodeContainer = ({ text }: EpisodeContainerProps) => {
 
 
 const Category = styled.p`
-    color: #236e2d;
-    font-size: 37px;
-    border-bottom: 1px solid #236e2d;
+  ${theme.common.category}
 `;
 
 const Section1 = styled.section`
   position: relative;
-  width: 80%;
-  margin: 0 auto;
-  padding: 25px 0;
+  ${theme.common.section}
   .seleted {
     position: absolute;
     top: 80px;
     right: 0;
     font-size: 24px;
-    color: #fcfff6;
+    color: ${theme.colors.white};
     text-align: right;
-    box-sizing: border-box;
     padding: 0 25px 0 10px;
     z-index: 20;
     background-color: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
     cursor: pointer;
     &::before {
       content: '';
@@ -190,7 +187,7 @@ const Section1 = styled.section`
       height: 0;
       top: 18px;
       right: 0;
-      border-top: 7px solid #236e2d;
+      border-top: 7px solid ${theme.colors.green};
       border-right: 7px solid transparent;
       border-left: 7px solid transparent;
       border-bottom: 7px solid transparent;
@@ -198,13 +195,13 @@ const Section1 = styled.section`
   }
   .seleted.active {
     padding: 0 25px 10px 10px;
+    box-sizing: border-box;
   }
 `;
 
 const Article = styled.section`
     display: grid;
     gap: 3em;
-    text-align: center;
     @media (min-width: ${MEDIA_QUERY_END_POINT.MOBILE}) { 
         grid-template-columns: repeat(1, 1fr);
     }

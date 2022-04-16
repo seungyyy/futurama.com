@@ -4,6 +4,7 @@ import { InventoryCard } from './inventoryCard';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
 import { useFuturamaData } from '../../hooks/useFuturamaData';
 import { Inventory } from '../../types/inventory';
+import { theme } from '../../constants/theme';
 
 interface InventoryContainerProps { 
   text: string;
@@ -30,22 +31,17 @@ export const InventoryContainer = ({ text }: InventoryContainerProps) => {
   );
 }
 
-const Category = styled.p`
-  color: #236e2d;
-  font-size: 37px;
-  border-bottom: 1px solid #236e2d;
+const Section1 = styled.section`
+  ${theme.common.section};
 `;
 
-const Section1 = styled.section`
-  width: 80%;
-  margin: 0 auto;
-  padding: 25px 0;
+const Category = styled.p`
+  ${theme.common.category};
 `;
 
 const Article = styled.section`
   display: grid;
   gap: 3em;
-  text-align: center;
   @media (min-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
     grid-template-columns: repeat(1, 1fr);
   }

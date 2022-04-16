@@ -1,7 +1,7 @@
 import { Questions } from '../../types/questions';
 import styled from '@emotion/styled/';
 import { useState } from 'react';
-
+import { theme } from '../../constants/theme';
 interface QestionProps {
   questionData: Questions;
   number: number;
@@ -44,18 +44,18 @@ export const QuestionCard = ({ questionData, number, setAnswer }: QestionProps) 
 
 const Container = styled.div`
   padding: 2rem;
+  box-sizing: border-box;
   .quiz-box {
-    width: 500px;
     text-align: left;
     label {
       line-height: 1.8;
       cursor: pointer;
-      color: #9c9b9b;
+      color: ${theme.colors.grey};
     }
     input[type='checkbox'] {
       display: none;
       &:checked + label {
-        color: #236e2d;
+        color: ${theme.colors.green};
       }
     }
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Navigation, Footer } from '.';
+import { theme } from '../../constants/theme';
 
 export const Layout: React.FC = ({ children }) => {
   return (
@@ -19,6 +20,5 @@ const Container = styled.main`
   height: 100%;
   position: relative;
   margin: 0 auto;
-  background-color: #0e0e0e;
-  font-family: 'Oswald', sans-serif;
+  background-color: ${theme.colors.black};
 `;

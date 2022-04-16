@@ -1,5 +1,6 @@
 import { Cast } from '../../types/cast';
 import styled from '@emotion/styled/';
+import { theme } from '../../constants/theme';
 
 interface CastProps {
   castData: Cast;
@@ -28,11 +29,7 @@ export const CastCard = ({ castData }: CastProps) => {
 
 const Container = styled.div`
   position: relative;
-  background-color: #fcfff6;
-  border-radius: 6px;
-  padding-bottom: 2rem;
-  box-shadow: rgba(49, 160, 49, 0.575) 5px 5px, rgba(49, 160, 49, 0.3) 10px 10px,
-  rgba(49, 160, 49, 0.2) 15px 15px, rgba(49, 160, 49, 0.1) 20px 20px;
+  ${theme.common.containerShadow}
   .castName {
     display: inline-block;
     margin-right: 0.4rem;
@@ -46,13 +43,13 @@ const Container = styled.div`
     width: 15%;
     margin: 0 auto;
     padding: 0.2rem 0.1rem;
-    background-color: #f89700;
+    background-color: ${theme.colors.orange};
     border-radius: 6px;
     font-family: 'Gothic A1', sans-serif;
     font-weight: 400;
-    color: #fcfff6;
+    color: ${theme.colors.white};
   }
   &:hover {
-      background-color: #b5b8b0;
+    background-color: ${theme.colors.lightGrey};
   }
 `;

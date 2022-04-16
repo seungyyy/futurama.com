@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
+import { theme } from '../../constants/theme';
 
 export const Footer = () => {
   return (
@@ -15,10 +16,10 @@ export const Footer = () => {
 
 const Bottom = styled.footer`
   margin-top: 3em;
-  color: #fcfff6;
+  color: ${theme.colors.white};
   text-align: center;
   font-family: 'Gothic A1', sans-serif;
-  background-color: #0e0e0e;
+  background-color: ${theme.colors.black};
   .footerTxt {
     display: flex;
     justify-content: center;

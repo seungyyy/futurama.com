@@ -4,6 +4,7 @@ import { InfoCard } from './infoCard';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
 import { useFuturamaData } from '../../hooks/useFuturamaData';
 import { Info } from '../../types/info';
+import { theme } from '../../constants/theme';
 
 interface InfoProps {
   text: string;
@@ -32,15 +33,11 @@ export const InfoContainer = ({ text }: InfoProps) => {
 }
 
 const Category = styled.p`
-    color: #236e2d;
-    font-size: 37px;
-    border-bottom: 1px solid #236e2d;
+  ${theme.common.category}
 `;
 
 const Section1 = styled.section`
-    width: 80%;
-    margin: 0 auto;
-    padding: 25px 0;
+  ${theme.common.section}
 `;
 
 const Article = styled.article`

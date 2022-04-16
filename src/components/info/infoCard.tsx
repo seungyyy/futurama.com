@@ -4,6 +4,7 @@ import styled from '@emotion/styled/';
 import Image from 'next/image';
 import  PostImg  from '../../../public/image/poster.png';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
+import { theme } from '../../constants/theme';
 
 interface InfoProps {
     infoData: Info;
@@ -14,7 +15,7 @@ export const InfoCard = ({ infoData }: InfoProps) => {
   const [isOn, setTxt] = useState(false);
 
   const toggleBtn = () => {
-      setTxt((isOn) => !isOn); // on,off 개념 boolean
+      setTxt((isOn) => !isOn); 
   };
 
     return (
@@ -58,19 +59,20 @@ const Container = styled.div`
   position: relative;
   padding: 1rem 0 4rem 0;
   margin-bottom: 4em;
-  background-color: #fcfff6;
+  background-color: ${theme.colors.white};
   border-radius: 6px;
-  box-shadow: rgba(49, 160, 49, 0.575) 5px 5px, rgba(49, 160, 49, 0.3) 10px 10px,
-    rgba(49, 160, 49, 0.2) 15px 15px, rgba(49, 160, 49, 0.1) 20px 20px;
+  box-shadow: ${theme.common.boxShadow};
+  box-sizing: border-box;
   &:after {
     display: block;
     content: '';
     clear: both;
   }
   .post-box {
-    padding: 1.5rem;
-    width: 40.62vw;
+    padding: 1.5rem 0 0 1.5rem;
+    width: 41vw;
     float: left;
+    box-sizing: border-box;
   }
 
   @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
@@ -79,6 +81,7 @@ const Container = styled.div`
       padding: 1.5em 0 0;
       object-fit: contain;
       width: 100%;
+      box-sizing: border-box;
     }
   }
 `;
@@ -89,6 +92,7 @@ const Synopsis = styled.div`
   position: relative;
   padding: 1.5rem 2rem 1.5rem 1rem;
   font-size: 1.2rem;
+  box-sizing: border-box;
   span {
     font-size: 0.8rem;
     vertical-align: top;
@@ -102,20 +106,11 @@ const Synopsis = styled.div`
     right: 2em;
     .btnTranslate,
     .wikiLink {
-      font-family: 'Gothic A1', sans-serif;
-      border-radius: 8px;
-      font-size: 1rem;
-      color: #fcfff6;
-      background-color: #f89700;
-      z-index: 10;
+      ${theme.common.buttonStyle}
       cursor: pointer;
     }
     .btnTranslate {
-      padding: 0.5rem 1.5rem;
       margin-right: 1.5em;
-    }
-    .wikiLink {
-      padding: 0.6rem 1.4rem;
     }
   }
   .hide-Txt {
@@ -126,19 +121,22 @@ const Synopsis = styled.div`
     position: absolute;
     top: 0;
     transform: translateX(-3%);
-    padding: 1rem 1rem 1rem 0;
+    padding: 1rem;
     line-height: 1.7em;
-    background-color: #fcfff6;
-    font-size: 1.1rem;
+    background-color: ${theme.colors.white};
+    font-size: 1.11rem;
     z-index: 10;
+    box-sizing: border-box;
   }
   @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
     width: auto;
     float: left;
     span {
       padding: 1rem;
+      box-sizing: border-box;
     }
     p {
+      box-sizing: border-box;
       padding-left: 1rem;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -154,10 +152,6 @@ const Synopsis = styled.div`
       display: -webkit-box;
       -webkit-line-clamp: 8;
       -webkit-box-orient: vertical;
-    }
-    .btnTranslate {
-    }
-    .wikiLink {
     }
   }
 `;

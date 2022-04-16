@@ -4,6 +4,7 @@ import { QuestionCard } from './questionsCard';
 import { useFuturamaData } from '../../hooks/useFuturamaData';
 import { Questions } from '../../types/questions';
 import { useState } from 'react';
+import { theme } from '../../constants/theme';
 
 interface QuestionContainerProps { 
   text: string;
@@ -85,45 +86,20 @@ export const QuestionContainer = ({ text }: QuestionContainerProps) => {
 };
 
 const Category = styled.p`
-  color: #236e2d;
-  font-size: 37px;
-  border-bottom: 1px solid #236e2d;
+  ${theme.common.category};
 `;
 
 const Section1 = styled.section`
-  width: 80%;
-  margin: 0 auto;
-  padding: 25px 0;
+  ${theme.common.section}
 `;
 
 const Article = styled.section`
   position: relative;
-  text-align: center;
-  background-color: #fcfff6;
-  border-radius: 6px;
-  padding: 1rem;
-  box-shadow: rgba(49, 160, 49, 0.575) 5px 5px, rgba(49, 160, 49, 0.3) 10px 10px,
-    rgba(49, 160, 49, 0.2) 15px 15px, rgba(49, 160, 49, 0.1) 20px 20px;
-  .next-btn {
-    position: absolute;
-    bottom: 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 0.5em 1em;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    color: #fcfff6;
-    background-color: #f89700;
-  }
+  ${theme.common.containerShadow}
+  .next-btn,
   .result-btn {
     position: absolute;
     bottom: 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 0.5em 1em;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    color: #fcfff6;
-    background-color: #f89700;
+    ${theme.common.buttonStyle}
   }
 `;
