@@ -108,7 +108,7 @@ const Nav = styled.nav`
       right: 10px;
       padding: 0;
       background-color: ${theme.colors.black};
-      z-index: 20;
+      z-index: 30;
       opacity: 0.8;
       li:nth-of-type(n + 1) {
         margin-top: 0.5rem;

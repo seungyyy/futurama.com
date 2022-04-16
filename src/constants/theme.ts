@@ -45,6 +45,31 @@ const common = {
   rgba(49, 160, 49, 0.575) 5px 5px, rgba(49, 160, 49, 0.3) 10px 10px,
     rgba(49, 160, 49, 0.2) 15px 15px, rgba(49, 160, 49, 0.1) 20px 20px;
   `,
+  seletedList: `
+    position: absolute;
+    top: 50px;
+    right: 0;
+    font-size: 24px;
+    color: #fcfff6;
+    text-align: right;
+    padding: 0 25px 0 10px;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    cursor: pointer;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 18px;
+      right: 0;
+      border-top: 7px solid #236e2d;
+      border-right: 7px solid transparent;
+      border-left: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+    }
+  `,
 };
 
 export const theme = {

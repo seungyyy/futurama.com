@@ -90,7 +90,7 @@ export const EpisodeContainer = ({ text }: EpisodeContainerProps) => {
   return (
     <Section1>
       <Category>Episodes</Category>
-      <div
+      <ul
         onClick={handleClickSeleted}
         className={'seleted' + `${isOff === true ? '' : ' active'}`}
       >
@@ -104,7 +104,7 @@ export const EpisodeContainer = ({ text }: EpisodeContainerProps) => {
           seletedList.map((item) => {
             return <li key={item.id}>{item.title}</li>;
           })}
-      </div>
+      </ul>
       <Article>
         {list === 1 &&
           data.map((episodesData: Episodes) => {
@@ -154,7 +154,6 @@ export const EpisodeContainer = ({ text }: EpisodeContainerProps) => {
               <EpisodeCard key={`${text}-list-${episodesData.id}`} episodesData={episodesData} />
             );
           })}
-        
       </Article>
     </Section1>
   );
@@ -169,29 +168,7 @@ const Section1 = styled.section`
   position: relative;
   ${theme.common.section}
   .seleted {
-    position: absolute;
-    top: 80px;
-    right: 0;
-    font-size: 24px;
-    color: ${theme.colors.white};
-    text-align: right;
-    padding: 0 25px 0 10px;
-    z-index: 20;
-    background-color: rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    cursor: pointer;
-    &::before {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 0;
-      top: 18px;
-      right: 0;
-      border-top: 7px solid ${theme.colors.green};
-      border-right: 7px solid transparent;
-      border-left: 7px solid transparent;
-      border-bottom: 7px solid transparent;
-    }
+    ${theme.common.seletedList}
   }
   .seleted.active {
     padding: 0 25px 10px 10px;

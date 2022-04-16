@@ -11,15 +11,13 @@ export const InventoryCard = ({ inventoryData }: InventoryProps) => {
   
   return (
     <Container>
-      <h3>title {title}</h3>
-      <br></br>
-      <p>category {category}</p>
-      <br></br>
-      <p>description {description}</p>
-      <br></br>
-      <p>slogan {slogan}</p>
-      <br></br>
-      <p>price {price}</p>
+      <div className="tit-box">
+        <h3 className="tit">{title}</h3>
+        <p className="category">{category}</p>
+      </div>
+      {slogan && <p>&ldquo;{slogan}&rdquo;</p>}
+      <p>{description}</p>
+      <p>price $ {price}</p>
     </Container>
   );
 }
@@ -29,5 +27,17 @@ const Container = styled.div`
   ${theme.common.containerShadow}
   &:hover {
     background-color: ${theme.colors.lightGrey};
+  }
+  .tit-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .tit {
+      font-weight: regular;
+    }
+    .category {
+      margin-left: 15px;
+      font-size: .8rem;
+    }
   }
 `;
