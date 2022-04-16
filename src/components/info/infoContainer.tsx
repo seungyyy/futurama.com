@@ -32,12 +32,15 @@ export const InfoContainer = ({ text }: InfoProps) => {
   );
 }
 
-const Category = styled.p`
-  ${theme.common.category}
-`;
-
 const Section1 = styled.section`
   ${theme.common.section}
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    margin-top: 9rem;
+  }
+`;
+
+const Category = styled.p`
+  ${theme.common.category}
 `;
 
 const Article = styled.article`

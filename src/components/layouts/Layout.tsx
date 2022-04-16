@@ -17,7 +17,6 @@ export const Layout: React.FC = ({ children }) => {
 
 const Container = styled.main`
   max-width: 1920px;
-  height: 100%;
   position: relative;
   margin: 0 auto;
   background-color: ${theme.colors.black};

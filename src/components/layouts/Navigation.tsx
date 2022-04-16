@@ -57,6 +57,15 @@ const Nav = styled.nav`
     cursor: pointer;
   }
   @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    position: fixed;
+    left: 50%;
+    width: 100%;
+    padding: 2rem 2rem 0;
+    top: 0;
+    transform: translateX(-50%);
+    background-color: ${theme.colors.black};
+    z-index: 30;
+    box-sizing: border-box;
     object-fit: contain;
   }
   .menuBtn {
@@ -102,26 +111,29 @@ const Nav = styled.nav`
     .showMenu {
       display: block;
       position: fixed;
-      width: 150px;
       top: 5rem;
+      width: 160px;
       height: 100vh;
       right: 10px;
-      padding: 0;
+      padding-right: 90px;
       background-color: ${theme.colors.black};
       z-index: 30;
       opacity: 0.8;
+      text-align: right;
+      box-sizing: border-box;
       li:nth-of-type(n + 1) {
         margin-top: 0.5rem;
-      }
-      li {
-        padding-left: 1.5rem;
-        box-sizing: border-box;
       }
       li > a {
         &:hover {
           color: ${theme.colors.green};
         }
       }
+    }
+  }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    .showMenu {
+      padding-right: 30px;
     }
   }
 `;

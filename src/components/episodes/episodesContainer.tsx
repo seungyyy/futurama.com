@@ -159,11 +159,6 @@ export const EpisodeContainer = ({ text }: EpisodeContainerProps) => {
   );
 }
 
-
-const Category = styled.p`
-  ${theme.common.category}
-`;
-
 const Section1 = styled.section`
   position: relative;
   ${theme.common.section}
@@ -174,6 +169,13 @@ const Section1 = styled.section`
     padding: 0 25px 10px 10px;
     box-sizing: border-box;
   }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    margin-top: 9rem;
+  }
+`;
+
+const Category = styled.p`
+  ${theme.common.category}
 `;
 
 const Article = styled.section`

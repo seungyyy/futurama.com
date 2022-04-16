@@ -38,7 +38,6 @@ const common = {
   section: `
     width: 80%;
     margin: 0 auto;
-    padding: 25px 0;
     box-sizing: border-box;
   `,
   boxShadow: `
@@ -47,7 +46,7 @@ const common = {
   `,
   seletedList: `
     position: absolute;
-    top: 50px;
+    top: -7px;
     right: 0;
     font-size: 24px;
     color: #fcfff6;

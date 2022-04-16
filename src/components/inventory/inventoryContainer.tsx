@@ -136,6 +136,9 @@ const Section1 = styled.section`
     padding: 0 25px 10px 10px;
     box-sizing: border-box;
   }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    margin-top: 9rem;
+  }
 `;
 
 const Category = styled.p`

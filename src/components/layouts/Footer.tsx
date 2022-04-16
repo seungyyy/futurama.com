@@ -15,11 +15,12 @@ export const Footer = () => {
 }
 
 const Bottom = styled.footer`
-  margin-top: 3em;
+  padding: 3.5rem 0 0.7rem;
   color: ${theme.colors.white};
   text-align: center;
   font-family: 'Gothic A1', sans-serif;
   background-color: ${theme.colors.black};
+  box-sizing: border-box;
   .footerTxt {
     display: flex;
     justify-content: center;
@@ -33,7 +34,6 @@ const Bottom = styled.footer`
     }
     @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
       flex-direction: column;
-      margin-top: 15em;
     }
   }
 `;

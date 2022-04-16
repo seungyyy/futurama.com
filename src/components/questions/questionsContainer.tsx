@@ -5,6 +5,7 @@ import { useFuturamaData } from '../../hooks/useFuturamaData';
 import { Questions } from '../../types/questions';
 import { useState } from 'react';
 import { theme } from '../../constants/theme';
+import { MEDIA_QUERY_END_POINT } from '../../constants';
 
 interface QuestionContainerProps { 
   text: string;
@@ -85,12 +86,15 @@ export const QuestionContainer = ({ text }: QuestionContainerProps) => {
   );
 };
 
-const Category = styled.p`
-  ${theme.common.category};
-`;
-
 const Section1 = styled.section`
   ${theme.common.section}
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    margin-top: 9rem;
+  }
+`;
+
+const Category = styled.p`
+  ${theme.common.category};
 `;
 
 const Article = styled.section`

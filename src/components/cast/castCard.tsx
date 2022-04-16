@@ -40,7 +40,7 @@ const Container = styled.div`
   }
   .bioLink {
     display: block;
-    width: 15%;
+    width: 19%;
     margin: 0 auto;
     padding: 0.2rem 0.1rem;
     background-color: ${theme.colors.orange};

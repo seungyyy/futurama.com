@@ -58,7 +58,6 @@ export const InfoCard = ({ infoData }: InfoProps) => {
 const Container = styled.div`
   position: relative;
   padding: 1rem 0 4rem 0;
-  margin-bottom: 4em;
   background-color: ${theme.colors.white};
   border-radius: 6px;
   box-shadow: ${theme.common.boxShadow};
@@ -102,7 +101,7 @@ const Synopsis = styled.div`
   }
   .btn-box {
     position: absolute;
-    bottom: -1.7em;
+    bottom: -2.1rem;
     right: 2em;
     .btnTranslate,
     .wikiLink {
@@ -121,7 +120,7 @@ const Synopsis = styled.div`
     position: absolute;
     top: 0;
     transform: translateX(-3%);
-    padding: 1rem;
+    padding: 1rem 1rem 0;
     line-height: 1.7em;
     background-color: ${theme.colors.white};
     font-size: 1.11rem;
