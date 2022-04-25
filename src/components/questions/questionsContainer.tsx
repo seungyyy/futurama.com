@@ -6,7 +6,7 @@ import { Questions } from '../../types/questions';
 import { useState } from 'react';
 import { theme } from '../../constants/theme';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
-
+import { useRouter } from 'next/router';
 interface QuestionContainerProps { 
   text: string;
 }
@@ -14,6 +14,8 @@ interface QuestionContainerProps {
 export const QuestionContainer = ({ text }: QuestionContainerProps) => { 
   const { data, error } = useFuturamaData(text);
   const [answer, setAnswer] = useState<any>([]);
+  const [isReturn, setIsReturn] = useState(false);
+  const router = useRouter();
   const [currentAnswer, setCurrentAnswer] = useState({
     currResults: '',
     failResults: '',
@@ -49,6 +51,11 @@ export const QuestionContainer = ({ text }: QuestionContainerProps) => {
     }
   };
 
+  const handlerRefreshPage = () => { 
+    setIsReturn(false);
+    router.reload();
+  }
+
   if (error) return <Error />;
   if (!data) return <Loading />;
   
@@ -76,9 +83,15 @@ export const QuestionContainer = ({ text }: QuestionContainerProps) => {
             className="result-btn"
             onClick={() => {
               alert(currentAnswer.currNum + '개 맞췄습니다.');
+              setIsReturn(true);
             }}
           >
             결과 확인
+          </button>
+        )}
+        {isReturn && (
+          <button className="return-btn" onClick={handlerRefreshPage}>
+            다시하기
           </button>
         )}
       </Article>
@@ -101,7 +114,8 @@ const Article = styled.section`
   position: relative;
   ${theme.common.containerShadow}
   .next-btn,
-  .result-btn {
+  .result-btn,
+  .return-btn {
     position: absolute;
     bottom: 1.5rem;
     ${theme.common.buttonStyle}
