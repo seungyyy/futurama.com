@@ -34,7 +34,7 @@ const Container = styled.div`
   ${theme.common.containerShadow}
   padding: 2rem 0;
   &:hover {
-    background-color: ${theme.colors.lightGrey};
+    background-color: ${theme.colors.middleGrey};
   }
   .more-btn {
     ${theme.common.buttonStyle}

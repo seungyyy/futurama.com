@@ -25,7 +25,7 @@ const Container = styled.div`
   position: relative;
   ${theme.common.containerShadow}
   &:hover {
-    background-color: ${theme.colors.lightGrey};
+    background-color: ${theme.colors.middleGrey};
   }
   .ep-desc {
     display: -webkit-box;

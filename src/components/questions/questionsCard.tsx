@@ -50,7 +50,7 @@ const Container = styled.div`
     label {
       line-height: 1.8;
       cursor: pointer;
-      color: ${theme.colors.grey};
+      color: ${theme.colors.darkGrey};
     }
     input[type='checkbox'] {
       display: none;

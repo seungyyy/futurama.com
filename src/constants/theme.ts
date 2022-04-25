@@ -2,8 +2,10 @@
 const colors = {
   white: '#fcfff6',
   black: '#0e0e0e',
-  grey: '#9c9b9b',
-  lightGrey: '#b5b8b0',
+  darkGrey: '#9c9b9b',
+  middleGrey: '#c6cfc6',
+  grey: '#D9D9D9',
+  lightGrey: '#ededed',
   green: '#236e2d',
   orange: '#f89700',
   mint: '#00e6c7',

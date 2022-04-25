@@ -26,7 +26,7 @@ const Container = styled.div`
   position: relative;
   ${theme.common.containerShadow}
   &:hover {
-    background-color: ${theme.colors.lightGrey};
+    background-color: ${theme.colors.middleGrey};
   }
   .tit-box {
     display: flex;
@@ -37,7 +37,7 @@ const Container = styled.div`
     }
     .category {
       margin-left: 15px;
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
   }
 `;

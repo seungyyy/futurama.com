@@ -50,6 +50,6 @@ const Container = styled.div`
     color: ${theme.colors.white};
   }
   &:hover {
-    background-color: ${theme.colors.lightGrey};
+    background-color: ${theme.colors.middleGrey};
   }
 `;

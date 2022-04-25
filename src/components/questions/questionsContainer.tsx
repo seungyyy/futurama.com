@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { theme } from '../../constants/theme';
 import { MEDIA_QUERY_END_POINT } from '../../constants';
 import { useRouter } from 'next/router';
+import { QuestionModal } from './questionModal';
 interface QuestionContainerProps { 
   text: string;
 }
@@ -15,6 +16,7 @@ export const QuestionContainer = ({ text }: QuestionContainerProps) => {
   const { data, error } = useFuturamaData(text);
   const [answer, setAnswer] = useState<any>([]);
   const [isReturn, setIsReturn] = useState(false);
+  const [isModal, setIsModal] = useState(false);
   const router = useRouter();
   const [currentAnswer, setCurrentAnswer] = useState({
     currResults: '',
@@ -61,6 +63,7 @@ export const QuestionContainer = ({ text }: QuestionContainerProps) => {
   
   return (
     <Section1>
+      {isModal && <QuestionModal text={currentAnswer.currNum} isModal={setIsModal} />}
       <Category>Quiz</Category>
       <Article>
         {data.slice(question.start, question.end).map((questionData: Questions) => {
@@ -82,7 +85,7 @@ export const QuestionContainer = ({ text }: QuestionContainerProps) => {
           <button
             className="result-btn"
             onClick={() => {
-              alert(currentAnswer.currNum + '개 맞췄습니다.');
+              setIsModal(true);
               setIsReturn(true);
             }}
           >
