@@ -5,29 +5,29 @@ import { theme } from '../../constants/theme';
 interface QestionProps {
   questionData: Questions;
   number: number;
-  setAnswer: (text: string) => void;
 }
 
-export const QuestionCard = ({ questionData, number, setAnswer }: QestionProps) => {
-  const { question, possibleAnswers, correctAnswer } = questionData;
-  const [checked, setChecked] = useState(0);
+export const QuestionCard = ({ questionData, number }: QestionProps) => {
+  const { question, possibleAnswers } = questionData;
+  const [checked, setChecked] = useState();
 
-  const changeInput = (event: React.ChangeEvent) => {
+  const changeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked((event.target as any).id);
-    setAnswer(number + 1 + (event.target as any).parentElement.textContent.slice(2));
   };
 
   return (
     <Container>
       <div className="quiz-box">
-        <p>Q {number+1}. {question}</p>
+        <p>
+          Q {number + 1}. {question}
+        </p>
         {possibleAnswers.map((el, index) => {
           return (
             <li key={index}>
               <input
                 type="checkbox"
                 id={index.toString()}
-                checked={index.toString() === checked.toString()}
+                checked={checked ? index.toString() === `${checked}` :false}
                 onChange={changeInput}
               />
               <label htmlFor={index.toString()}>

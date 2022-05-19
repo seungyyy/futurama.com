@@ -4,25 +4,26 @@ import deleteButton from '../../../public/image/delete-btn.png';
 import Image from 'next/image';
 
 interface QuestionModalProps {
-  text: number;
-  isModal: any;
+  text: string | number;
+  content: string;
+  isModal: (text: boolean)=> void;
 }
 
-export const QuestionModal = ({ text, isModal }: QuestionModalProps) => {
-  const modalOff = () => { 
+export const QuestionModal = ({ text, isModal, content }: QuestionModalProps) => {
+  const modalOff = () => {
     isModal(false);
-  }
+  };
 
   return (
     <ModalContainer>
       <ModalCont>
         <div className="modal-header">
-          <span className="modal-tit">결과확인</span>
+          <span className="modal-tit">{content === '결과확인' ? '결과확인' : '정답선택'}</span>
           <button onClick={modalOff}>
             <Image src={deleteButton} alt="닫기버튼" />
           </button>
         </div>
-        <p>{text}개 맞췄습니다.</p>
+        <p>{text}</p>
         <span className="modal-btn" onClick={modalOff}>
           확인
         </span>
