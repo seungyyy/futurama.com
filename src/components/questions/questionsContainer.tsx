@@ -68,10 +68,9 @@ export const QuestionContainer = ({ text }: QuestionContainerProps) => {
     let word: string | null = null;
     let check: boolean = false;
     const tag = document.querySelectorAll('input');
+
     [].forEach.call(tag, function (tag: any) {
-      if (tag.checked) {
-        check = true;
-      }
+      if (tag.checked) check = true;
     });
 
     if ((event.target as HTMLElement).tagName === 'LABEL') {
@@ -89,12 +88,10 @@ export const QuestionContainer = ({ text }: QuestionContainerProps) => {
       if (check) handleClickBtn(1);
       else setIsAnswer(true);
     }
-
     if ((event.target as HTMLElement).className === 'result-btn') { 
       setCorrectResult(
         result.filter((val: string, index: number) => val === localStorage.getItem(`${index}`)).length
       );
-  
     }
   }
 
@@ -103,7 +100,7 @@ export const QuestionContainer = ({ text }: QuestionContainerProps) => {
       {isModal && (
         <QuestionModal
           content={'결과확인'}
-          text={correctResult + '개 맞췄습니다.'}
+          text={correctResult === 27 ? '다 맞췄습니다!' : correctResult + '개 맞췄습니다.'}
           isModal={setIsModal}
         />
       )}
