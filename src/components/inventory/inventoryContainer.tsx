@@ -13,8 +13,8 @@ interface InventoryContainerProps {
 
 export const InventoryContainer = ({ text }: InventoryContainerProps) => { 
   const { data, error } = useFuturamaData(text);
-  const [list, setList] = useState('all');
-  const [isOff, setIsOff] = useState(true);
+  const [list, setList] = useState<string>('all');
+  const [isOff, setIsOff] = useState<boolean>(true);
 
   if (error) return <Error />;
   if (!data) return <Loading />;

@@ -12,7 +12,7 @@ interface InfoProps {
 
 export const InfoCard = ({ infoData }: InfoProps) => {
   const { synopsis, yearsAired } = infoData;
-  const [isOn, setTxt] = useState(false);
+  const [isOn, setTxt] = useState<boolean>(false);
 
   const toggleBtn = () => {
       setTxt((isOn) => !isOn); 

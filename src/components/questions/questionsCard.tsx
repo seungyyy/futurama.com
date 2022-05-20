@@ -9,7 +9,7 @@ interface QestionProps {
 
 export const QuestionCard = ({ questionData, number }: QestionProps) => {
   const { question, possibleAnswers } = questionData;
-  const [checked, setChecked] = useState();
+  const [checked, setChecked] = useState<number>();
 
   const changeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked((event.target as any).id);

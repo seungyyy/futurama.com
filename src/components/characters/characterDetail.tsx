@@ -12,7 +12,6 @@ export const CharacterDetail = () => {
   const path = 'characters';
   const router = useRouter();
   const { pid } = router.query;
-  console.log(path);
   const { data, error } = useFuturamaData(path, pid);
 
   if (!data) return <Loading />;

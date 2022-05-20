@@ -13,8 +13,8 @@ interface EpisodeContainerProps {
 
 export const EpisodeContainer = ({ text }: EpisodeContainerProps) => {
   const { data, error } = useFuturamaData(text);
-  const [list, setList] = useState(1);
-  const [isOff, setIsOff] = useState(true);
+  const [list, setList] = useState<number>(1);
+  const [isOff, setIsOff] = useState<boolean>(true);
 
   if (error) return <Error />;
   if (!data) return <Loading />;
