@@ -6,7 +6,7 @@ import { MEDIA_QUERY_END_POINT } from '../../constants';
 import { useFuturamaData } from '../../hooks/useFuturamaData';
 import { Inventory } from '../../types/inventory';
 import { theme } from '../../constants/theme';
-
+import { seletedInventoryList, inventoryName } from '../../data/inventoryData';
 interface InventoryContainerProps { 
   text: string;
 }
@@ -20,85 +20,30 @@ export const InventoryContainer = ({ text }: InventoryContainerProps) => {
   if (!data) return <Loading />;
 
 
-  const handleClickSeleted = (event: React.MouseEvent<HTMLElement>) => {
+  const handleClickSeleted = (event: React.MouseEvent<HTMLUListElement>) => {
     setIsOff(!isOff);
-    switch ((event.target as any).textContent) {
-      case 'Pest Control':
-        setList('Pest Control');
-        break;
-      case 'Misc':
-        setList('Misc');
-        break;
-      case 'Food':
-        setList('Food');
-        break;
-      case 'Publications':
-        setList('Publications');
-        break;
-      case 'Toys':
-        setList('Toys');
-        break;
-      case 'Health':
-        setList('Health');
-        break;
-      case 'Clothing':
-        setList('Clothing');
-        break;
-      case 'all':
-        setList('all');
-        break;
-      default:
-        setList('all');
+
+    return inventoryCategoryChange((event.target as HTMLLIElement).textContent);
+  };
+  
+  const inventoryCategoryChange = (inventoryText: string | null) => { 
+    if (typeof (inventoryText) === 'string') { 
+      return setList(inventoryName[inventoryText]);
     }
   };
 
-  const seletedList = [
-    {
-      id: 0,
-      category: 'all',
-    },
-    {
-      id: 1,
-      category: 'Pest Control',
-    },
-    {
-      id: 2,
-      category: 'Misc',
-    },
-    {
-      id: 3,
-      category: 'Food',
-    },
-    {
-      id: 4,
-      category: 'Publications',
-    },
-    {
-      id: 5,
-      category: 'Toys',
-    },
-    {
-      id: 6,
-      category: 'Health',
-    },
-    {
-      id: 7,
-      category: 'Clothing',
-    },
-  ];
-  
   return (
     <Section1>
       <Category>Inventory</Category>
       <ul onClick={handleClickSeleted} className={'seleted' + `${isOff === true ? '' : ' active'}`}>
         {isOff &&
-          seletedList.map((item) => {
+          seletedInventoryList.map((item) => {
             if (item.category === list) {
               return <li key={item.id}>{item.category}</li>;
             }
           })}
         {!isOff &&
-          seletedList.map((item) => {
+          seletedInventoryList.map((item) => {
             return <li key={item.id}>{item.category}</li>;
           })}
       </ul>

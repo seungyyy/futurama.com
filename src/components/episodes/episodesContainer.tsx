@@ -6,7 +6,7 @@ import { useFuturamaData } from '../../hooks/useFuturamaData';
 import { Episodes } from '../../types/episodes';
 import { useState } from 'react';
 import { theme } from '../../constants/theme';
-
+import { seletedEpisodeList, episodeName } from '../../data/episodeData';
 interface EpisodeContainerProps {
   text: string;
 }
@@ -22,70 +22,15 @@ export const EpisodeContainer = ({ text }: EpisodeContainerProps) => {
 
   const handleClickSeleted = (event: React.MouseEvent<HTMLElement>) => {
     setIsOff(!isOff);
-    switch ((event.target as any).textContent) {
-      case 'Episode 1':
-        setList(2);
-        break;
-      case 'Episode 2':
-        setList(3);
-        break;
-      case 'Episode 3':
-        setList(4);
-        break;
-      case 'Episode 4':
-        setList(5);
-        break;
-      case 'Episode 5':
-        setList(6);
-        break;
-      case 'Episode 6':
-        setList(7);
-        break;
-      case 'Episode 7':
-        setList(8);
-        break;
-      case 'all': 
-        setList(1);
-        break;
-      default: 
-        setList(1);
-    }
+
+    return episodeCategoryChange((event.target as HTMLElement).textContent);
   };
 
-  const seletedList = [
-    {
-      id: 1,
-      title: 'all',
-    },
-    {
-      id: 2,
-      title: 'Episode 1',
-    },
-    {
-      id: 3,
-      title: 'Episode 2',
-    },
-    {
-      id: 4,
-      title: 'Episode 3',
-    },
-    {
-      id: 5,
-      title: 'Episode 4',
-    },
-    {
-      id: 6,
-      title: 'Episode 5',
-    },
-    {
-      id: 7,
-      title: 'Episode 6',
-    },
-    {
-      id: 8,
-      title: 'Episode 7',
-    },
-  ];
+  const episodeCategoryChange = (episodeText: string | null) => {
+    if (typeof episodeText === 'string') {
+      setList(episodeName[episodeText]);
+    }
+  };
 
   return (
     <Section1>
@@ -95,13 +40,13 @@ export const EpisodeContainer = ({ text }: EpisodeContainerProps) => {
         className={'seleted' + `${isOff === true ? '' : ' active'}`}
       >
         {isOff &&
-          seletedList.map((item) => {
+          seletedEpisodeList.map((item) => {
             if (item.id === list) {
               return <li key={item.id}>{item.title}</li>;
             }
           })}
         {!isOff &&
-          seletedList.map((item) => {
+          seletedEpisodeList.map((item) => {
             return <li key={item.id}>{item.title}</li>;
           })}
       </ul>
