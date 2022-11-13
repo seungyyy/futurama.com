@@ -12,7 +12,8 @@ export const QuestionCard = ({ questionData, number }: QestionProps) => {
   const [checked, setChecked] = useState<number>();
 
   const changeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked((event.target as any).id);
+    const id = (event.target as HTMLInputElement).id;
+    setChecked(parseInt(id));
   };
 
   return (
